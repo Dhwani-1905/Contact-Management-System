@@ -2,7 +2,6 @@
  #include <stdlib.h>
  #include<string.h>
 
-
  int main()
  {
 
@@ -10,7 +9,6 @@
      int choice;
      FILE *fptr, *cptr;
      char  ans,a='y', i;
-
 
      while(choice!=5)
      {
@@ -35,7 +33,7 @@
 
                  printf("\nEnter first name: ");
                  scanf("%s", fname);
-                  fptr=fopen(fname, "r");
+                 fptr=fopen(fname, "r");
 
                  if ((fptr = fopen(fname,"r")) == NULL)
                  {
@@ -57,7 +55,7 @@
                  scanf("%s", sname);
                  printf("Enter phone number: ");
                  scanf("%s", phn);
-                  while(strlen(phn)!=10)
+                 while(strlen(phn)!=10)
                  {
                      printf("\n");
                      printf("--------------------------------------------\n");
@@ -140,12 +138,12 @@
                  fptr=fopen(filename, "r");
 
                  if ((fptr = fopen(filename,"r")) == NULL){
-                 printf("\n");
-                 printf("--------------------------------------------\n");
-                 printf("The file does not exist.\n");
-                 printf("--------------------------------------------\n");
-                 printf("\n");
-                     exit(1);
+                  printf("\n");
+                  printf("--------------------------------------------\n");
+                  printf("The file does not exist.\n");
+                  printf("--------------------------------------------\n");
+                  printf("\n");
+                  exit(1);
                  }
 
                  printf("\n");
@@ -154,8 +152,8 @@
                  printf("--------------------------------------------\n");
                  printf("\n");
 
-                  i = fgetc(fptr);
-                while (i != EOF)
+                 i = fgetc(fptr);
+                 while (i != EOF)
                  {
                      printf ("%c", i);
                      i = fgetc(fptr);
@@ -174,18 +172,9 @@
                      while ((ans = fgetc(fptr)) != EOF)
                      {
                          fputc(ans, cptr);
-                    }
+                     }
 
                      fclose(fptr);
-
-                     /*if( remove(filename)==0)
-                     {
-                         printf("The contact is updated successfully.");
-                     }
-                     else
-                     {
-                         printf("contact is not updated.");
-                     }*/
 
                      fseek(cptr, 12, SEEK_SET);
                      fputs("                    ",cptr);
@@ -260,23 +249,23 @@
                      if ((fptr = fopen(filename,"r+")) == NULL){
                          printf("Error! opening file");
                          exit(1);
-                 }
+                     }
 
-                 printf("Enter the new phone number: ");
-                 scanf("%s",phn);
+                     printf("Enter the new phone number: ");
+                     scanf("%s",phn);
 
-                 fseek(fptr,130, SEEK_SET);
-                 fputs("                                    ",fptr);
-                 fseek(fptr,130, SEEK_SET);
-                 fputs(phn,fptr);
+                     fseek(fptr,130, SEEK_SET);
+                     fputs("                                    ",fptr);
+                     fseek(fptr,130, SEEK_SET);
+                     fputs(phn,fptr);
 
-                 printf("\n");
-                 printf("--------------------------------------------\n");
-                 printf("The contact is updated successfully.\n");
-                 printf("--------------------------------------------\n");
-                 printf("\n");
+                     printf("\n");
+                     printf("--------------------------------------------\n");
+                     printf("The contact is updated successfully.\n");
+                     printf("--------------------------------------------\n");
+                     printf("\n");
 
-                 fclose(fptr);
+                     fclose(fptr);
                  }
 
                  printf("\n");
@@ -298,7 +287,7 @@
                  }
 
                   i = fgetc(fptr);
-                while (i != EOF)
+                 while (i != EOF)
                  {
                      printf ("%c", i);
                      i = fgetc(fptr);
